@@ -3,7 +3,7 @@ var app=express();
 require("dotenv").config()
 const db  = require("./Db/Connection")
 
-const port = 3001
+const port = 8000
 app.use(express.json());
 
 const product_routes = require("./Routes/Route");
@@ -18,5 +18,5 @@ app.use("/products",product_routes)
 app.listen(port, async()=>{
     await db(process.env.MONGODB_URL);
     //await model.create(productJson)
-    console.log('listening on port 3001')
+    console.log('listening on port 8000')
 })
