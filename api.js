@@ -14,8 +14,7 @@ app.get('/', (req, res) => {
 
 app.use("/products",product_routes)
 
-
-app.listen(port, "0.0.0.0", function () {
+app.listen(port, async()=>{
     await db(process.env.MONGODB_URL);
     //await model.create(productJson)
     console.log('listening on port 3000')
